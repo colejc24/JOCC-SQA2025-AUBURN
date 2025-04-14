@@ -1,0 +1,6 @@
+filename,test_name,test_id,issue_severity,issue_confidence,issue_text,line_number,line_range,more_info
+./parser.py,blacklist,B404,LOW,HIGH,Consider possible security implications associated with subprocess module.,15,[15],https://bandit.readthedocs.io/en/latest/blacklists/blacklist_imports.html#b404-import-subprocess
+./parser.py,start_process_with_partial_path,B607,LOW,HIGH,Starting a process with a partial executable path,332,[332],https://bandit.readthedocs.io/en/latest/plugins/b607_start_process_with_partial_path.html
+./parser.py,subprocess_without_shell_equals_true,B603,LOW,HIGH,subprocess call - check for execution of untrusted input.,332,[332],https://bandit.readthedocs.io/en/latest/plugins/b603_subprocess_without_shell_equals_true.html
+./parser.py,start_process_with_partial_path,B607,LOW,HIGH,Starting a process with a partial executable path,347,[347],https://bandit.readthedocs.io/en/latest/plugins/b607_start_process_with_partial_path.html
+./parser.py,subprocess_without_shell_equals_true,B603,LOW,HIGH,subprocess call - check for execution of untrusted input.,347,[347],https://bandit.readthedocs.io/en/latest/plugins/b603_subprocess_without_shell_equals_true.html
