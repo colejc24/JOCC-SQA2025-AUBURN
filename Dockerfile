@@ -7,6 +7,7 @@ RUN conda config --append channels conda-forge
 # Create the environment:
 COPY environment.yml .
 RUN conda env create -v -f environment.yml
+RUN pip install --upgrade pip
 RUN pip install ruamel.yaml
 RUN pip install pandas sarif_om jschema-to-python typer
 RUN apt-get update && apt-get install -y curl jq \
