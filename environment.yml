@@ -1,5 +1,18 @@
+# name: KUBESEC
+# channels:
+#   - defaults
+# dependencies:
+#   - python=3.11
+#   - pandas=2.0.2
+#   - pyyaml=6.0
+#   - pytest=7.3.1
+#   - requests=2.29.0
+#   - typer=0.9.0
+
+#Trying to get github actions to work
 name: KUBESEC
 channels:
+  - conda-forge
   - defaults
 dependencies:
   - python=3.11
@@ -8,3 +21,8 @@ dependencies:
   - pytest=7.3.1
   - requests=2.29.0
   - typer=0.9.0
+  - ruamel.yaml
+  - pip
+  - pip:
+      - sarif_om
+      - jschema-to-python
