@@ -184,26 +184,19 @@ def mineServiceGraph( script_path, dict_yaml, src_val ):
 
 
 def mineNetPolGraph( script_, dict_y, src_val, src_keys ):
-    '''
-    Thsi method looks at YAML files that have kind: NetworkPoicy , and checks if used in another YAML
-    with kind: Deployment or kind: Pod 
-    Works for all types 
-    Need to provide script path, script dict, idnetified values, and all keys of source 
-    '''
+    logger.info(f"Analyzing network policy connections for: {script_}")
     lis2ret     = [] 
     net_pol_dir = os.path.dirname( script_ )  + constants.SLASH_SYMBOL    
     yaml_files  = getYAMLFiles( net_pol_dir )    
     for yaml_f in yaml_files:
-        if( parser.checkIfValidK8SYaml( yaml_f ) ):
+        if parser.checkIfValidK8SYaml( yaml_f ):
             dict_as_list   = parser.loadMultiYAML( yaml_f )
             sink_yaml_dict = parser.getSingleDict4MultiDocs( dict_as_list )                    
-            sink_val_li_   = list(  parser.getValuesRecursively(sink_yaml_dict) )
-            if( src_val in sink_val_li_ ) and ( (constants.DEPLOYMENT_KW in sink_val_li_) or (constants.POD_KW in sink_val_li_) ):  
+            sink_val_li_   = list( parser.getValuesRecursively(sink_yaml_dict) )
+            if src_val in sink_val_li_ and (constants.DEPLOYMENT_KW in sink_val_li_ or constants.POD_KW in sink_val_li_):  
                 sink_keys = parser.keyMiner(sink_yaml_dict, src_val)                
                 for sink_k in sink_keys:
-                    if ( sink_k in src_keys ):
+                    if sink_k in src_keys:
                         lis2ret.append( ( src_val, sink_k ) ) 
-    return lis2ret 
-
-
-# if __name__=='__main__':
+    logger.info(f"Network policy links found: {len(lis2ret)}")
+    return lis2ret
