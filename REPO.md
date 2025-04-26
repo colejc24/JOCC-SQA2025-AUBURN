@@ -5,3 +5,5 @@ For the part b, we created the fuzz.py file to fuzz 5 different Python methods. 
 For part c, we integrated forensics into these 5 python methods: mineNetPolGraph, GetYAMLFiles, getHelmTemplateContent, mineSecretGraph, and mineServiceGraph. This allows us to see more about how the code is executing along the way. This also helped us learn more about how digital forensics can be used within a system to uncover bugs and other vulnerabilities within the system by tracking the program throughout its execution.
 
 With all of these sections together, we were able to build a project that allowed for integration of many of the assignments we have done throughout the semester into one cohesive project to see how we can be sure that our programs are maintained and held to a high standard without creating possible vulnerabilities or bugs within our code.
+
+To specify who has done what, the team worked together on the code with Cliffton doing a lot of the work, Cole did the report and setup the project/repo, Jackson did part c, and Owen helped along the way with the code and report.
