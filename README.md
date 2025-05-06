@@ -3,7 +3,7 @@
 Team Name: JOCC
  
 Team Members:
-Jackson Phillips, = 4.C
+Jackson Phillips, = 4.C, README
 Owen Reedy,
 Cliffton Lang, = 4.A, 4.B
 Cole Cordle = repo set up, report 
